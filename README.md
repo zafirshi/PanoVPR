@@ -27,8 +27,9 @@
 
 ## Update
 
-- [2023-03] :construction: Init repo and release [arxiv](https://arxiv.org/pdf/2303.14095.pdf) version
+- [2023-11] :gear: Code Release
 - [2023-08] :tada: PanoVPR is accepted to 26th IEEE International Conference on Intelligent Transportation Systems ([ITSC-2023](https://2023.ieee-itsc.org/)).
+- [2023-03] :construction: Init repo and release [arxiv](https://arxiv.org/pdf/2303.14095.pdf) version
 
 ## Introduction
 
@@ -46,4 +47,50 @@ For more details, please check our [arXiv](https://arxiv.org/pdf/2303.14095.pdf)
 
 ## Usage
 
-*Coming soon...*
+### Setup
+
+You need to first create an environment from file `environment.yml` using [Conda](https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html), and then activate it.
+
+```bash
+conda env create -f environment.yml --prefix /path/to/env
+conda activate PanoVPR
+```
+
+### Train
+
+If you want to train the network, you can change the training configuration and the dataset used 
+by specifying parameters such as `--backbone`, `--split_nums`, and `--dataset_name` in the command line.
+
+Meanwhile, adjust other parameters according to the actual situation.
+By default, the output results are stored in the `./logs/{save_dir}` folder.
+
+**Please note that the `--title` parameter must be specified in the command line.** 
+
+```bash
+# Train on Pitts250K
+python train.py --title  swinTx24 \
+                --save_dir clean_branch_test \ 
+                --backbone swin_tiny \
+                --split_nums 24 \
+                --dataset_name pitts250k \ 
+                --cache_refresh_rate 125 \
+                --neg_sample 100 \
+                --queries_per_epoch 2000
+```
+
+### Inference
+
+For the inference process, you need to specify the absolute path where the `best_model.pth` is stored in the `--resume` parameter.
+
+```bash
+# Val and Test On Pitts250K
+python test.py --title  test_swinTx24 \
+                --save_dir clean_branch_test \ 
+                --backbone swin_tiny \
+                --split_nums 24  \
+                --dataset_name pitts250k \
+                --cache_refresh_rate 125 \
+                --neg_sample 100 \
+                --queries_per_epoch 2000 \
+                --resume <absoulate path containing best_model.pth>
+```
