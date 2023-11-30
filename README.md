@@ -47,6 +47,13 @@ For more details, please check our [arXiv](https://arxiv.org/pdf/2303.14095.pdf)
 
 ## Usage
 
+### Dataset Preparation
+
+Before starting, you need to download the Pitts250K-P2E dataset [[BaiduYun Link]()] and the YQ360 dataset [[BaiduYun Link]()].
+
+Afterwards, specify the `--datasets_folder` parameter in the `parser.py` file.
+
+
 ### Setup
 
 You need to first create an environment from file `environment.yml` using [Conda](https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html), and then activate it.
@@ -67,7 +74,7 @@ By default, the output results are stored in the `./logs/{save_dir}` folder.
 **Please note that the `--title` parameter must be specified in the command line.** 
 
 ```bash
-# Train on Pitts250K
+# Train on Pitts250K-P2E
 python train.py --title  swinTx24 \
                 --save_dir clean_branch_test \ 
                 --backbone swin_tiny \
@@ -83,7 +90,7 @@ python train.py --title  swinTx24 \
 For the inference process, you need to specify the absolute path where the `best_model.pth` is stored in the `--resume` parameter.
 
 ```bash
-# Val and Test On Pitts250K
+# Val and Test On Pitts250K-P2E
 python test.py --title  test_swinTx24 \
                 --save_dir clean_branch_test \ 
                 --backbone swin_tiny \
@@ -93,4 +100,26 @@ python test.py --title  test_swinTx24 \
                 --neg_sample 100 \
                 --queries_per_epoch 2000 \
                 --resume <absoulate path containing best_model.pth>
+```
+
+## Acknowledgments
+
+We thank the authors of the following repositories for their open source code:
+
+- [tranleanh/image-panorama-stitching](https://github.com/tranleanh/image-panorama-stitching)
+- [gmberton/datasets_vg](https://github.com/gmberton/datasets_vg)
+- [gmberton/deep-visual-geo-localization-benchmark](https://github.com/gmberton/deep-visual-geo-localization-benchmark)
+
+
+## Cite Our Work
+
+Thanks for using our work. You can cite it as:
+
+```bib
+@article{shi2023panovpr,
+  title={PanoVPR: Towards Unified Perspective-to-Equirectangular Visual Place Recognition via Sliding Windows across the Panoramic View},
+  author={Shi, Ze and Shi, Hao and Yang, Kailun and Yin, Zhe and Lin, Yining and Wang, Kaiwei},
+  journal={arXiv preprint arXiv:2303.14095},
+  year={2023}
+}
 ```
