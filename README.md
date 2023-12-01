@@ -49,7 +49,7 @@ For more details, please check our [arXiv](https://arxiv.org/pdf/2303.14095.pdf)
 
 ### Dataset Preparation
 
-Before starting, you need to download the Pitts250K-P2E dataset and the YQ360 dataset [[OneDrive Link](https://zjueducn-my.sharepoint.com/:f:/g/personal/zafirshi_zju_edu_cn/Ei4N__otNrVAjxku0UnT-pQBel0B0luS9kV6D-os7wvakA)].
+Before starting, you need to download the Pitts250K-P2E dataset and the YQ360 dataset [[OneDrive Link](https://zjueducn-my.sharepoint.com/:f:/g/personal/zafirshi_zju_edu_cn/Ei4N__otNrVAjxku0UnT-pQBel0B0luS9kV6D-os7wvakA)][[BaiduYun Link](https://pan.baidu.com/s/1IBcpAwnwY5YlqfgfSqRz-w?pwd=Pano)].
 
 Afterwards, specify the `--datasets_folder` parameter in the `parser.py` file.
 
