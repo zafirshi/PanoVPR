@@ -116,10 +116,12 @@ We thank the authors of the following repositories for their open source code:
 Thanks for using our work. You can cite it as:
 
 ```bib
-@article{shi2023panovpr,
-  title={PanoVPR: Towards Unified Perspective-to-Equirectangular Visual Place Recognition via Sliding Windows across the Panoramic View},
+@INPROCEEDINGS{shi2023panovpr,
   author={Shi, Ze and Shi, Hao and Yang, Kailun and Yin, Zhe and Lin, Yining and Wang, Kaiwei},
-  journal={arXiv preprint arXiv:2303.14095},
-  year={2023}
+  booktitle={2023 IEEE 26th International Conference on Intelligent Transportation Systems (ITSC)}, 
+  title={PanoVpr: Towards Unified Perspective-to-Equirectangular Visual Place Recognition via Sliding Windows Across the Panoramic View}, 
+  year={2023},
+  pages={1333-1340},
+  doi={10.1109/ITSC57777.2023.10421857}
 }
 ```
